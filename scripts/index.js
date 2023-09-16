@@ -52,7 +52,7 @@ function mirrorVirtualKeyboardKeyPress(keyName) {
 }
 
 function movePlayer(shiftSet) {
-   const playerDivElement = document.querySelector('.the-game > .display > .the-player');
+   const playerDivElement = document.querySelector('.display .the-player');
    const newPlayerDivElementCoordinates = isInBounds(shiftSet, playerDivElement);
 
    if (newPlayerDivElementCoordinates) {
