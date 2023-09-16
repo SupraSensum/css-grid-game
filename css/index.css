@@ -62,6 +62,7 @@ h1 {
 
 .controls > div:hover {
    border: 2px solid rgb(0, 191, 255);
+   scale: 1.05;
 }
 
 .controls > div:active {
