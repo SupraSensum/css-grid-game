@@ -69,7 +69,7 @@ h1 {
    background-color: silver;
    border-radius: 1rem;
    padding: 1rem;
-   border: 2px solid black;
+   border: 4px solid black;
    box-shadow: 4px 3px 3px silver;
    transition: border var(--transition-duration), box-shadow var(--transition-duration), scale var(--transition-duration);
 }
