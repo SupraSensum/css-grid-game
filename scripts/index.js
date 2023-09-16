@@ -1,40 +1,38 @@
-// add event listeners
-// switch statement to listen for keys we care about
-// 
-//    up    = -1 / 0 / -1 / 0
-//    down  = 1 / 0 / 1 / 0
-//    left  = 0 / -1 / 0 / -1
-//    right = 0 / 1 / 0 / 1
-// 
-//    Update array accordingly with list above
-// 
-// movePlayer()
-//
-//    apply maths
-//    
-//    if beyond a boundary
-//       do nothing
-//    else
-//       move player
+// get elements
+const allHtmlArrowButtons = document.querySelectorAll('.controls > .arrow-button');
 
+// add event listeners
 document.addEventListener('keydown', (e) => determinePlayerShiftSet(e))
+allHtmlArrowButtons.forEach((button) => button.addEventListener('click', () => {
+   const fakeKeyPressData = {
+      key: button.getAttribute('data-custom-key-label'),
+      preventDefault() {return},
+   }
+
+   determinePlayerShiftSet(fakeKeyPressData);
+}));
 
 function determinePlayerShiftSet(e) {
    let shiftSet = [];
 
+   e.preventDefault();
    
    switch (e.key) {
       case 'ArrowUp':
          shiftSet = [-1, 0, -1, 0];
+         mirrorVirtualKeyboardKeyPress(e.key);
          break;
       case 'ArrowDown':
          shiftSet = [1, 0, 1, 0];
+         mirrorVirtualKeyboardKeyPress(e.key);
          break;
       case 'ArrowLeft':
          shiftSet = [0, -1, 0, -1];
+         mirrorVirtualKeyboardKeyPress(e.key);
          break;
       case 'ArrowRight':
          shiftSet = [0, 1, 0, 1];
+         mirrorVirtualKeyboardKeyPress(e.key);
          break;
       default:
          return;
@@ -43,6 +41,14 @@ function determinePlayerShiftSet(e) {
    movePlayer(shiftSet);
 
    return;
+}
+
+function mirrorVirtualKeyboardKeyPress(keyName) {
+   allHtmlArrowButtons.forEach((button) => {
+      if (keyName === button.getAttribute('data-custom-key-label')) {
+         button.classList.add('active');
+      }
+   });
 }
 
 function movePlayer(shiftSet) {

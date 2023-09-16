@@ -1,3 +1,9 @@
+:root,
+:root::before,
+:root::after {
+   --transition-duration: 0.08s
+}
+
 * {
    box-sizing: border-box;
    margin: 0;
@@ -28,16 +34,60 @@ h1 {
 
    display: grid;
    grid-template: repeat(5, 20%) / repeat(5, 20%);   
-
 }
 
 .controls {
    flex: 1;
 
    border: 3px solid black;
+
+   display: grid;
+   grid-template: 80px 80px / 80px 80px 80px;
+   gap: 1rem 1rem;
+
+   justify-content: center;
 }
 
 .the-player {
    background-color: lightcoral;
    grid-area: 3 / 3 / 4 / 4;
+}
+
+.controls > div {
+   background-color: silver;
+   border-radius: 1rem;
+   padding: 1rem;
+   border: 2px solid black;
+   box-shadow: 4px 3px 3px silver;
+   transition: border var(--transition-duration), box-shadow var(--transition-duration), scale var(--transition-duration);
+}
+
+.controls > div:hover {
+   border: 2px solid rgb(0, 191, 255);
+}
+
+.controls > div:active {
+   box-shadow: none;
+   scale: 0.9;
+}
+
+.controls svg {
+   height: 100%;
+   width: 100%;
+}
+
+.arrow-up {
+   grid-area: 1 / 2 / 2 / 3;
+}
+
+.arrow-left {
+   grid-area: 2 / 1 / 3 / 2;
+}
+
+.arrow-down {
+   grid-area: 2 / 2 / 3 / 3;
+}
+
+.arrow-right {
+   grid-area: 2 / 3 / 3 / 4;
 }
