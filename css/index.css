@@ -36,6 +36,11 @@ h1 {
    grid-template: repeat(5, 20%) / repeat(5, 20%);   
 }
 
+.the-player {
+   background-color: lightcoral;
+   grid-area: 3 / 3 / 4 / 4;
+}
+
 .controls {
    flex: 1;
 
@@ -44,11 +49,6 @@ h1 {
    gap: 1rem 1rem;
 
    justify-content: center;
-}
-
-.the-player {
-   background-color: lightcoral;
-   grid-area: 3 / 3 / 4 / 4;
 }
 
 .controls > div {
