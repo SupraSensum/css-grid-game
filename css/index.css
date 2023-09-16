@@ -32,6 +32,9 @@ h1 {
 .display {
    flex: 3;
 
+   border: 1.5rem solid silver;
+   border-radius: 1rem;
+
    display: grid;
    grid-template: repeat(5, 20%) / repeat(5, 20%);   
 }
