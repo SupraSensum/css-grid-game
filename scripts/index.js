@@ -99,3 +99,5 @@ function determineGridLinesQuantities() {
 
    return [numberOfColumns > 0 ? numberOfColumns + 1 : 0, numberOfRows > 0 ? numberOfRows + 1 : 0];
 }
+
+// test
