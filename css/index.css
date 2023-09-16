@@ -39,8 +39,6 @@ h1 {
 .controls {
    flex: 1;
 
-   border: 3px solid black;
-
    display: grid;
    grid-template: 80px 80px / 80px 80px 80px;
    gap: 1rem 1rem;
