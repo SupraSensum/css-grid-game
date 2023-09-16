@@ -30,7 +30,7 @@ h1 {
 }
 
 .display {
-   flex: 2;
+   flex: 3;
 
    display: grid;
    grid-template: repeat(5, 20%) / repeat(5, 20%);   
