@@ -29,8 +29,18 @@ h1 {
    flex-direction: column;
 }
 
-.display {
+.display-container {
    flex: 3;
+
+   padding-left: 2ch;
+   padding-right: 2ch;
+
+   display: flex;
+   flex-direction: column;
+}
+
+.display {
+   flex: 1;
 
    border: 1.5rem solid silver;
    border-radius: 1rem;
